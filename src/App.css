@@ -1,0 +1,27 @@
+/* App.css */
+
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.App {
+  @apply max-w-lg mx-auto my-8 p-4 bg-white rounded-lg;
+}
+
+button {
+  @apply transition-all duration-300;
+}
+
+button:hover {
+  @apply bg-purple-700;
+}
+
+input,
+select {
+  @apply transition-all duration-300;
+}
+
+input:focus,
+select:focus {
+  @apply outline-none ring-2 ring-purple-600;
+}
