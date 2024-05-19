@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { currencySymbol } from "../utility/currency";
 
 const Payment = ({ splitDetails }) => {
   const location = useLocation();
@@ -71,7 +72,7 @@ const Payment = ({ splitDetails }) => {
       </div>
       <div className="text-lg mb-4">
         <p>
-          You are paying: <span className="font-semibold">${finalAmount}</span>
+          You are paying: <span className="font-semibold">{currencySymbol}{finalAmount}</span>
         </p>
       </div>
       <div className="mb-4">

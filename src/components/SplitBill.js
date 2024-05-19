@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { currencySymbol } from "../utility/currency";
 
 const SplitBill = ({ splitOption, setSplitDetails }) => {
   const navigate = useNavigate();
@@ -114,11 +115,11 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
       {/* Additional UI for splitting by items can be added here */}
       <div className="flex justify-between mt-6">
         <p>Left To Pay</p>
-        <p>${BILL_AMOUNT - shareAmount}</p>
+        <p>{currencySymbol}{BILL_AMOUNT - shareAmount}</p>
       </div>
       <div className="flex justify-between mt-2">
         <p>Your share</p>
-        <p>${shareAmount || 0}</p>
+        <p>{currencySymbol}{shareAmount || 0}</p>
       </div>
       <button
         onClick={handleNext}

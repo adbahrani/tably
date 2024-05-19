@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { currencySymbol } from "../utility/currency";
 
 const OrderSummary = ({ setSplitDetails }) => {
   const navigate = useNavigate();
@@ -30,15 +31,15 @@ const OrderSummary = ({ setSplitDetails }) => {
       <ul className="mb-4">
         {orderItems.map((item, index) => (
           <li key={index} className="flex justify-between py-2 border-b">
-            {item.name} <span>${item.price.toFixed(2)}</span>
+            {item.name} <span>{currencySymbol}{item.price.toFixed(2)}</span>
           </li>
         ))}
       </ul>
       <div className="text-right mb-4">
-        <p>Subtotal: ${subtotal.toFixed(2)}</p>
-        <p>Discount: -${discount.toFixed(2)}</p>
-        <p>Total: ${total.toFixed(2)}</p>
-        <p>GST: ${gst}</p>
+        <p>Subtotal: {currencySymbol}{subtotal.toFixed(2)}</p>
+        <p>Discount: -{currencySymbol}{discount.toFixed(2)}</p>
+        <p>Total: {currencySymbol}{total.toFixed(2)}</p>
+        {/* <p>GST: {currencySymbol}{gst}</p> */}
       </div>
 
       <div className="flex justify-between">
