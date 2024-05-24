@@ -31,10 +31,10 @@ const Payment = ({ splitDetails }) => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">
-        Would you like to add a tip?
+      <h2 className="text-2xl font-semibold mb-4 text-right">
+        هل ترغب في إضافة بقشيش؟
       </h2>
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 text-right">
         <button
           onClick={() => setTipPercentage(0.05)}
           className={`p-4 border rounded ${
@@ -66,33 +66,33 @@ const Payment = ({ splitDetails }) => {
           type="number"
           value={customTip}
           onChange={handleCustomTipChange}
-          placeholder="custom"
+          placeholder="مخصص"
           className="p-4 border rounded w-24 text-center"
         />
       </div>
-      <div className="text-lg mb-4">
+      <div className="text-lg mb-4 text-right">
         <p>
-          You are paying: <span className="font-semibold">{currencySymbol}{finalAmount}</span>
+        <span className="font-semibold">{currencySymbol}{finalAmount}</span>   : أنت تدفع 
         </p>
       </div>
-      <div className="mb-4">
+      <div className="mb-4 text-right">
         <button
           className="bg-black text-white py-2 px-4 rounded w-full flex items-center justify-center mb-4"
           onClick={handlePaymentSuccess}
         >
-          Pay with Apple Pay
+          الدفع بواسطة Apple Pay
         </button>
         <div className="flex flex-col items-center">
           <input
             type="text"
             defaultValue={"4012-8888-8888-1881"}
-            placeholder="Card number"
+            placeholder="رقم البطاقة"
             className="w-full px-3 py-2 border rounded mb-2"
           />
           <input
             type="text"
             defaultValue={"12/25"}
-            placeholder="Expiration MM / YY"
+            placeholder="تاريخ الانتهاء MM / YY"
             className="w-full px-3 py-2 border rounded mb-2"
           />
           <input
@@ -106,19 +106,19 @@ const Payment = ({ splitDetails }) => {
           className="bg-purple-600 text-white py-2 px-4 rounded w-full mt-4"
           onClick={handlePaymentSuccess}
         >
-          Pay Now
+          ادفع الآن
         </button>
       </div>
-      <div className="text-center text-gray-500 text-sm mt-4">
-        <p>100% Secure payments powered by Test</p>
+      <div className="text-center text-gray-500 text-sm mt-4 text-right">
+        <p>مدفوعات آمنة 100٪ مدعومة من Test</p>
         <p>
-          By using Test, you accept our{" "}
+          باستخدام Test، فإنك تقبل{" "}
           <a href="#" className="text-purple-600">
-            privacy policy
+            سياسة الخصوصية
           </a>{" "}
-          and{" "}
+          و{" "}
           <a href="#" className="text-purple-600">
-            terms and conditions
+            الشروط والأحكام
           </a>
         </p>
       </div>

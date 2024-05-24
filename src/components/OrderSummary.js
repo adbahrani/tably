@@ -6,18 +6,12 @@ const OrderSummary = ({ setSplitDetails }) => {
   const navigate = useNavigate();
 
   const orderItems = [
-    { name: "Bufalina - Large", price: 5.0 },
-    { name: "Calzone", price: 5.0 },
-    { name: "Capricciosa", price: 4.0 },
-    { name: "Cinque Terre", price: 3.0 },
-    { name: "Burger", price: 5.0 },
-    { name: "Chips", price: 2.0 },
-    { name: "Crispy Bicol Xpress", price: 6.0 },
-    { name: "Hot & Spicy", price: 7.0 },
-    { name: "Hot & Spicy w/ GB Rice", price: 12.0 },
-    { name: "Original w/ GB Rice", price: 12.5 },
-    { name: "Pork BBQ Skewers", price: 13.0 },
-    { name: "Pizza", price: 15.65 },
+    { name: "بيتزا", price: 15.0 },
+    { name: "كابزون", price: 4.0 },
+    { name: "بركر", price: 5.0 },
+    { name: "قنكر", price: 2.0 },
+    { name: "سكالوب", price: 6.0 },
+    { name: "مشروبات", price: 15.65 },
   ];
 
   const subtotal = orderItems.reduce((acc, item) => acc + item.price, 0);
@@ -27,19 +21,19 @@ const OrderSummary = ({ setSplitDetails }) => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Order Summary</h2>
+      <h2 className="text-2xl font-semibold text-center">قائمة الحساب</h2>
       <ul className="mb-4">
         {orderItems.map((item, index) => (
           <li key={index} className="flex justify-between py-2 border-b">
-            {item.name} <span>{currencySymbol}{item.price.toFixed(2)}</span>
+            <span>{currencySymbol}{item.price.toFixed(2)}</span>  {item.name}
           </li>
         ))}
       </ul>
-      <div className="text-right mb-4">
-        <p>Subtotal: {currencySymbol}{subtotal.toFixed(2)}</p>
-        <p>Discount: -{currencySymbol}{discount.toFixed(2)}</p>
-        <p>Total: {currencySymbol}{total.toFixed(2)}</p>
-        {/* <p>GST: {currencySymbol}{gst}</p> */}
+      <div className="mb-4">
+        <p className="flex justify-between py-2"><span>{currencySymbol}{subtotal.toFixed(2)}</span> :المجموع</p>
+        <p className="flex justify-between py-2"><span>-{currencySymbol}{discount.toFixed(2)}</span> :خصم</p>
+        <p className="flex justify-between py-2"><span>{currencySymbol}{total.toFixed(2)}</span> : المجموع النهائي</p>
+        
       </div>
 
       <div className="flex justify-between">
@@ -47,7 +41,7 @@ const OrderSummary = ({ setSplitDetails }) => {
           onClick={() => navigate("/split-options")}
           className="text-purple py-2 px-4 rounded hover:text-white"
         >
-          Split the Bill
+          قسم الفاتورة
         </button>
         <button
           onClick={() => {
@@ -56,7 +50,7 @@ const OrderSummary = ({ setSplitDetails }) => {
           }}
           className="bg-purple-600 text-white py-2 px-4 rounded"
         >
-          Pay full bill
+          دفع الحساب 
         </button>
       </div>
     </div>

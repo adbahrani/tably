@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { currencySymbol } from "../utility/currency";
 
 const PaymentConfirmation = ({ splitDetails }) => {
   const location = useLocation();
@@ -11,68 +12,67 @@ const PaymentConfirmation = ({ splitDetails }) => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-right">
       <button onClick={() => navigate("/")} className="text-purple-600 mb-4">
-        &lt; Back
+        &lt; العودة
       </button>
       <h2 className="text-2xl font-semibold mb-4">
-        Your payment was successful!
+        تم الدفع بنجاح!
       </h2>
-      <div className="flex justify-between items-center mb-4">
-        <span className="text-xl font-semibold">Table 2</span>
+      <div className="mb-4">
+        <span className="text-xl font-semibold text-right">طاولة 2</span>
         {remainingAmount > 0 && (
           <span className="text-xl font-semibold text-orange-500">
-            Partially Paid
+            تم الدفع جزئياً
           </span>
         )}
         {remainingAmount == 0 && (
           <span className="text-xl font-semibold text-green-500">
-            Fully Paid
+            تم الدفع بالكامل
           </span>
         )}
       </div>
       <div className="border-t border-dotted mb-4"></div>
       <p className="mb-4">
-        You paid <span className="font-semibold">${amountPaid}</span> for your
-        table
+        دفعت <span className="font-semibold">{currencySymbol + " " + amountPaid}</span> لطاولتك
       </p>
       <div className="mb-4">
         <p>
-          Transaction date: <span>{transactionDate}</span>
+          تاريخ المعاملة: 
+          <p>{transactionDate}</p>
         </p>
         <p
           className={`${
             remainingAmount > 0 ? "text-orange-500" : "text-green-500"
           }`}
         >
-          ${remainingAmount} is left to pay
+        {currencySymbol + " " + isNaN(remainingAmount) ? 0 : remainingAmount} المتبقي للدفع
         </p>
       </div>
       <p className="mb-4">
-        Thank you! Please keep this screen just in case for confirmation of
-        payment!
+        شكراً لك! يرجى الاحتفاظ بهذه الشاشة كإثبات للدفع!
       </p>
       <div className="mb-4">
-        <label className="block mb-2">Get your receipt by email</label>
+        <label className="block mb-2">احصل على إيصالك عبر البريد الإلكتروني</label>
         <div className="flex">
           <input
             type="email"
-            placeholder="Your E-mail Address"
+            placeholder="عنوان بريدك الإلكتروني"
             className="p-2 border rounded-l flex-grow"
           />
           <button className="bg-purple-600 text-white p-2 rounded-r">
-            Send
+            إرسال
           </button>
         </div>
       </div>
       <p className="text-sm text-gray-500">
-        By confirming my email, I accept Qlub's{" "}
+        بتأكيد بريدي الإلكتروني، أقبل سياسة الخصوصية{" "}
         <a href="#" className="text-purple-600">
-          privacy policy
+          سياسة الخصوصية
         </a>{" "}
-        and{" "}
+        و{" "}
         <a href="#" className="text-purple-600">
-          terms and conditions
+          الشروط والأحكام
         </a>
       </p>
     </div>

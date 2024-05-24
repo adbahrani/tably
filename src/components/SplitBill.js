@@ -43,18 +43,18 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
   return (
     <div className="p-4">
       {splitOption === "custom" && (
-        <h2 className="text-2xl font-semibold mb-4">Pay custom amount</h2>
+        <h2 className="text-2xl font-semibold mb-4">ادفع مبلغ مخصص</h2>
       )}
-      {splitOption === "euqal" && (
-        <h2 className="text-2xl font-semibold mb-4">Divide the bill equally</h2>
+      {splitOption === "equal" && (
+        <h2 className="text-2xl font-semibold mb-4">قسّم الفاتورة بالتساوي</h2>
       )}
       {splitOption === "items" && (
-        <h2 className="text-2xl font-semibold mb-4">Pay for your items</h2>
+        <h2 className="text-2xl font-semibold mb-4">دفع طلب معينة</h2>
       )}
       {splitOption === "equal" && (
         <>
           <div className="flex justify-between items-center mb-4">
-            <label className="block">Total people in your table</label>
+            <label className="block">إجمالي الأشخاص على طاولتك</label>
             <div className="flex items-center">
               <button
                 className="bg-gray-200 p-2 rounded-l"
@@ -77,7 +77,7 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
             </div>
           </div>
           <div className="flex justify-between items-center mb-4">
-            <label className="block">People you pay for</label>
+            <label className="block">الأشخاص الذين تدفع لهم</label>
             <div className="flex items-center">
               <button
                 className="bg-gray-200 p-2 rounded-l"
@@ -103,7 +103,7 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
       )}
       {splitOption === "custom" && (
         <div className="mb-4">
-          <label className="block mb-2">Enter custom amount: </label>
+          <label className="block mb-2">أدخل المبلغ المخصص: </label>
           <input
             type="number"
             value={customAmount}
@@ -114,24 +114,24 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
       )}
       {/* Additional UI for splitting by items can be added here */}
       <div className="flex justify-between mt-6">
-        <p>Left To Pay</p>
+        <p>المتبقي للدفع</p>
         <p>{currencySymbol}{BILL_AMOUNT - shareAmount}</p>
       </div>
       <div className="flex justify-between mt-2">
-        <p>Your share</p>
+        <p>حصتك</p>
         <p>{currencySymbol}{shareAmount || 0}</p>
       </div>
       <button
         onClick={handleNext}
         className="bg-purple-600 text-white py-2 px-4 rounded mt-6 w-full"
       >
-        Confirm
+        تأكيد
       </button>
       <button
         onClick={() => navigate("/split-options")}
         className="text-red-600 mt-4"
       >
-        Remove split
+        إزالة التقسيم
       </button>
     </div>
   );
