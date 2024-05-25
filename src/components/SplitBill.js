@@ -41,7 +41,7 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-right">
       {splitOption === "custom" && (
         <h2 className="text-2xl font-semibold mb-4">ادفع مبلغ مخصص</h2>
       )}
@@ -114,12 +114,14 @@ const SplitBill = ({ splitOption, setSplitDetails }) => {
       )}
       {/* Additional UI for splitting by items can be added here */}
       <div className="flex justify-between mt-6">
-        <p>المتبقي للدفع</p>
         <p>{currencySymbol}{BILL_AMOUNT - shareAmount}</p>
+        <p>المتبقي للدفع</p>
+
       </div>
       <div className="flex justify-between mt-2">
-        <p>حصتك</p>
         <p>{currencySymbol}{shareAmount || 0}</p>
+        <p>حصتك</p>
+
       </div>
       <button
         onClick={handleNext}

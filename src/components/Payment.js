@@ -72,7 +72,7 @@ const Payment = ({ splitDetails }) => {
       </div>
       <div className="text-lg mb-4 text-right">
         <p>
-        <span className="font-semibold">{currencySymbol}{finalAmount}</span>   : أنت تدفع 
+        <span className="font-semibold">{currencySymbol}{finalAmount}</span>   : المبلغ الحالي 
         </p>
       </div>
       <div className="mb-4 text-right">
@@ -80,7 +80,7 @@ const Payment = ({ splitDetails }) => {
           className="bg-black text-white py-2 px-4 rounded w-full flex items-center justify-center mb-4"
           onClick={handlePaymentSuccess}
         >
-          الدفع بواسطة Apple Pay
+          Apple Pay الدفع بواسطة
         </button>
         <div className="flex flex-col items-center">
           <input
@@ -110,9 +110,10 @@ const Payment = ({ splitDetails }) => {
         </button>
       </div>
       <div className="text-center text-gray-500 text-sm mt-4 text-right">
-        <p>مدفوعات آمنة 100٪ مدعومة من Test</p>
         <p>
-          باستخدام Test، فإنك تقبل{" "}
+         مدفوعات آمنة 100٪ مدعومة من فيزا </p>
+        <p>
+          باستخدام  فإنك تقبل{" "}
           <a href="#" className="text-purple-600">
             سياسة الخصوصية
           </a>{" "}

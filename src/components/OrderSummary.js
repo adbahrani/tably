@@ -7,9 +7,9 @@ const OrderSummary = ({ setSplitDetails }) => {
 
   const orderItems = [
     { name: "بيتزا", price: 15.0 },
-    { name: "كابزون", price: 4.0 },
+    { name: "كالزون", price: 4.0 },
     { name: "بركر", price: 5.0 },
-    { name: "قنكر", price: 2.0 },
+    { name: "فنكر", price: 2.0 },
     { name: "سكالوب", price: 6.0 },
     { name: "مشروبات", price: 15.65 },
   ];
