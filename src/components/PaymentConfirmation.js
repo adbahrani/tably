@@ -17,10 +17,10 @@ const PaymentConfirmation = ({ splitDetails }) => {
         &lt; العودة
       </button>
       <h2 className="text-2xl font-semibold mb-4">
-        تم الدفع بنجاح!
+        !تم الدفع بنجاح
       </h2>
       <div className="mb-4">
-        <span className="text-xl font-semibold text-right">طاولة 2</span>
+        <span className="text-xl font-semibold text-right"> طاولة 2 </span>
         {remainingAmount > 0 && (
           <span className="text-xl font-semibold text-orange-500">
             تم الدفع جزئياً
@@ -34,11 +34,14 @@ const PaymentConfirmation = ({ splitDetails }) => {
       </div>
       <div className="border-t border-dotted mb-4"></div>
       <p className="mb-4">
-        دفعت <span className="font-semibold">{currencySymbol + " " + amountPaid}</span> لطاولتك
+       <span> لطاولتك </span>
+        <span className="font-semibold">{currencySymbol + " " + amountPaid}</span>
+        <span> دفعت </span> 
+         
       </p>
       <div className="mb-4">
         <p>
-          تاريخ المعاملة: 
+          :تاريخ  
           <p>{transactionDate}</p>
         </p>
         <p
